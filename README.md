@@ -1,0 +1,2 @@
+# netschema
+Pydantified YANG models
