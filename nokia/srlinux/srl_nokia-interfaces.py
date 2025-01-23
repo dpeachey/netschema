@@ -10945,9 +10945,6 @@ class VhostContainer(BaseModel):
         Optional[List[SocketCpusLeafList]],
         Field(alias='srl_nokia-interfaces-vxdp:socket-cpus'),
     ] = []
-    """
-    List of CPUs present on the socket this interface is attached to
-    """
 
 
 class VirtualAddressLeafList2(RootModel[Ipv6AddressType]):
@@ -11456,9 +11453,6 @@ class DatapathProgrammingContainer(BaseModel):
         Optional[List[LastFailedComplexesLeafList]],
         Field(alias='srl_nokia-interfaces-nbr:last-failed-complexes'),
     ] = []
-    """
-    List of forwarding complexes that reported a failure for the last operation. They appear in the format (slot-number,complex-number).
-    """
 
 
 class DatapathProgrammingContainer2(BaseModel):
@@ -11476,9 +11470,6 @@ class DatapathProgrammingContainer2(BaseModel):
         Optional[List[LastFailedComplexesLeafList2]],
         Field(alias='srl_nokia-interfaces-nbr:last-failed-complexes'),
     ] = []
-    """
-    List of forwarding complexes that reported a failure for the last operation. They appear in the format (slot-number,complex-number).
-    """
 
 
 class DispersionControlModeLeaf(RootModel[OpticalDispersionControlModeType]):
@@ -11819,9 +11810,6 @@ class InternalTagsContainer(BaseModel):
         Optional[List[SetTagSetLeafList]],
         Field(alias='srl_nokia-interfaces-nbr:set-tag-set'),
     ] = []
-    """
-    Reference to a tag-set defined under routing-policy
-    """
 
 
 class InternalTagsContainer2(BaseModel):
@@ -11836,9 +11824,6 @@ class InternalTagsContainer2(BaseModel):
         Optional[List[SetTagSetLeafList2]],
         Field(alias='srl_nokia-interfaces-nbr-evpn:set-tag-set'),
     ] = []
-    """
-    Reference to a tag-set defined under routing-policy
-    """
 
 
 class InternalTagsContainer3(BaseModel):
@@ -11853,9 +11838,6 @@ class InternalTagsContainer3(BaseModel):
         Optional[List[SetTagSetLeafList3]],
         Field(alias='srl_nokia-interfaces-nbr:set-tag-set'),
     ] = []
-    """
-    Reference to a tag-set defined under routing-policy
-    """
 
 
 class InternalTagsContainer4(BaseModel):
@@ -11870,9 +11852,6 @@ class InternalTagsContainer4(BaseModel):
         Optional[List[SetTagSetLeafList4]],
         Field(alias='srl_nokia-interfaces-nbr-evpn:set-tag-set'),
     ] = []
-    """
-    Reference to a tag-set defined under routing-policy
-    """
 
 
 class IntervalLeaf(RootModel[LacpPeriodTypeType]):
@@ -12238,9 +12217,6 @@ class MacListEntry3(BaseModel):
         Optional[List[FailedSlotsLeafList]],
         Field(alias='srl_nokia-interfaces-bridge-table-mac-table:failed-slots'),
     ] = []
-    """
-    The list of slot IDs corresponding to the linecards that did not successfully program the mac
-    """
 
 
 class MplsContainer(BaseModel):
@@ -12538,9 +12514,6 @@ class OpticalChannelListEntry(BaseModel):
         Optional[List[SupportedGridsLeafList]],
         Field(alias='srl_nokia-interfaces-dco:supported-grids'),
     ] = []
-    """
-    Indicates the frequency grids supported by the equipped tunable optical port.
-    """
     fine_tuning: Annotated[
         Optional[FineTuningContainer],
         Field(alias='srl_nokia-interfaces-dco:fine-tuning'),
@@ -12566,16 +12539,10 @@ class OpticalChannelListEntry(BaseModel):
         Optional[List[ModuleTxTurnUpStatesLeafList]],
         Field(alias='srl_nokia-interfaces-dco:module-tx-turn-up-states'),
     ] = []
-    """
-    Indicates the completed transmitted turn-up states of the coherent optical module
-    """
     module_rx_turn_up_states: Annotated[
         Optional[List[ModuleRxTurnUpStatesLeafList]],
         Field(alias='srl_nokia-interfaces-dco:module-rx-turn-up-states'),
     ] = []
-    """
-    Indicates the completed received turn-up states of the coherent optical module
-    """
     rx_electrical_snr_x_polarization: Annotated[
         Optional[RxElectricalSnrXPolarizationLeaf],
         Field(alias='srl_nokia-interfaces-dco:rx-electrical-snr-x-polarization'),
@@ -12600,16 +12567,10 @@ class OpticalChannelListEntry(BaseModel):
         Optional[List[CurrentAlarmsLeafList]],
         Field(alias='srl_nokia-interfaces-dco:current-alarms'),
     ] = []
-    """
-    Indicates the coherent optical alarms currently active on the port.
-    """
     defect_points: Annotated[
         Optional[List[DefectPointsLeafList]],
         Field(alias='srl_nokia-interfaces-dco:defect-points'),
     ] = []
-    """
-    Indicates the coherent optical defect points currently active on the port.
-    """
     sweep: Annotated[
         Optional[SweepContainer], Field(alias='srl_nokia-interfaces-dco:sweep')
     ] = None
@@ -12645,9 +12606,6 @@ class PciContainer(BaseModel):
         Optional[List[SocketCpusLeafList2]],
         Field(alias='srl_nokia-interfaces-vxdp:socket-cpus'),
     ] = []
-    """
-    List of CPUs present on the socket this interface is attached to
-    """
     vendor_name: Annotated[
         Optional[VendorNameLeaf], Field(alias='srl_nokia-interfaces-vxdp:vendor-name')
     ] = None
@@ -13167,9 +13125,6 @@ class SymbolMonitorContainer(BaseModel):
         Optional[List[CurrentAlarmsLeafList3]],
         Field(alias='srl_nokia-interfaces:current-alarms'),
     ] = []
-    """
-    Current alarms of the Ethernet symbol monitoring, raised when corresponding threshold is exceeded
-    """
 
 
 class SynceContainer(BaseModel):
@@ -13197,9 +13152,6 @@ class TraceOptionsContainer(BaseModel):
         Optional[List[TraceLeafList]],
         Field(alias='srl_nokia-interfaces-ip-dhcp-relay:trace'),
     ] = []
-    """
-    List of events to trace
-    """
 
 
 class TraceOptionsContainer2(BaseModel):
@@ -13214,9 +13166,6 @@ class TraceOptionsContainer2(BaseModel):
         Optional[List[TraceLeafList2]],
         Field(alias='srl_nokia-interfaces-ip-dhcp:trace'),
     ] = []
-    """
-    List of events to trace
-    """
 
 
 class TraceOptionsContainer3(BaseModel):
@@ -13231,9 +13180,6 @@ class TraceOptionsContainer3(BaseModel):
         Optional[List[TraceLeafList3]],
         Field(alias='srl_nokia-interfaces-ip-dhcp-relay:trace'),
     ] = []
-    """
-    List of events to trace
-    """
 
 
 class TraceOptionsContainer4(BaseModel):
@@ -13248,9 +13194,6 @@ class TraceOptionsContainer4(BaseModel):
         Optional[List[TraceLeafList4]],
         Field(alias='srl_nokia-interfaces-ip-dhcp:trace'),
     ] = []
-    """
-    List of events to trace
-    """
 
 
 class TrackInterfaceListEntry(BaseModel):
@@ -13371,11 +13314,6 @@ class TransceiverContainer(BaseModel):
         Optional[List[SupportedOperationalModeLeafList]],
         Field(alias='srl_nokia-interfaces-dco:supported-operational-mode'),
     ] = []
-    """
-    Operational modes supported by the installed transceiver
-
-    Lists the operational-modes supported by the installed transceiver.  If no transceiver is installed, nothing is reported.
-    """
 
 
 class TunnelContainer(BaseModel):
@@ -13497,9 +13435,6 @@ class AddressListEntry2(BaseModel):
         Optional[List[AllowedMacsLeafList]],
         Field(alias='srl_nokia-interfaces-nbr-virtual-ip-discovery:allowed-macs'),
     ] = []
-    """
-    List of allowed mac addresses for a discovered virtual IP address.
-    """
     probe_interval: Annotated[
         Optional[ProbeIntervalLeaf],
         Field(alias='srl_nokia-interfaces-nbr-virtual-ip-discovery:probe-interval'),
@@ -13510,10 +13445,6 @@ class AddressListEntry2(BaseModel):
             alias='srl_nokia-interfaces-nbr-virtual-ip-discovery:probe-bridged-subinterfaces'
         ),
     ] = []
-    """
-    Configure the list of bridged sub-interfaces on the associated MAC-VRF to which the ARP
-    probes are sent.
-    """
     statistics: Annotated[
         Optional[StatisticsContainer7],
         Field(alias='srl_nokia-interfaces-nbr-virtual-ip-discovery:statistics'),
@@ -13536,9 +13467,6 @@ class AddressListEntry4(BaseModel):
         Optional[List[AllowedMacsLeafList2]],
         Field(alias='srl_nokia-interfaces-nbr-virtual-ip-discovery:allowed-macs'),
     ] = []
-    """
-    List of allowed mac addresses for a discovered virtual IP address.
-    """
     probe_interval: Annotated[
         Optional[ProbeIntervalLeaf2],
         Field(alias='srl_nokia-interfaces-nbr-virtual-ip-discovery:probe-interval'),
@@ -13549,10 +13477,6 @@ class AddressListEntry4(BaseModel):
             alias='srl_nokia-interfaces-nbr-virtual-ip-discovery:probe-bridged-subinterfaces'
         ),
     ] = []
-    """
-    Configure the list of bridged sub-interfaces on the associated MAC-VRF to which the NS
-    probes are sent.
-    """
     statistics: Annotated[
         Optional[StatisticsContainer12],
         Field(alias='srl_nokia-interfaces-nbr-virtual-ip-discovery:statistics'),
@@ -13728,9 +13652,6 @@ class CrcMonitorContainer(BaseModel):
         Optional[List[CurrentAlarmsLeafList2]],
         Field(alias='srl_nokia-interfaces:current-alarms'),
     ] = []
-    """
-    Current alarms of the Ethernet CRC monitoring, raised when corresponding threshold is exceeded
-    """
 
 
 class CurrentMasterLeaf(RootModel[IpAddressType]):
@@ -14142,9 +14063,6 @@ class RouterAdvertisementContainer(BaseModel):
         Optional[List[DebugLeafList3]],
         Field(alias='srl_nokia-interfaces-router-adv:debug'),
     ] = []
-    """
-    List of events to debug
-    """
 
 
 class VirtualIpv4DiscoveryContainer(BaseModel):
@@ -14304,9 +14222,6 @@ class VrrpGroupListEntry(BaseModel):
         Optional[List[VirtualAddressLeafList]],
         Field(alias='srl_nokia-interfaces-ip-vrrp:virtual-address'),
     ] = []
-    """
-    Associated Virtual IP address.
-    """
     version: Annotated[
         Optional[VersionLeaf], Field(alias='srl_nokia-interfaces-ip-vrrp:version')
     ] = 2
@@ -14402,9 +14317,6 @@ class VrrpGroupListEntry2(BaseModel):
         Optional[List[VirtualAddressLeafList2]],
         Field(alias='srl_nokia-interfaces-ip-vrrp:virtual-address'),
     ] = []
-    """
-    Associated Virtual IP address.
-    """
     version: Annotated[
         Optional[VersionLeaf2], Field(alias='srl_nokia-interfaces-ip-vrrp:version')
     ] = 3
@@ -14535,9 +14447,6 @@ class ArpContainer(BaseModel):
     debug: Annotated[
         Optional[List[DebugLeafList]], Field(alias='srl_nokia-interfaces-nbr:debug')
     ] = []
-    """
-    List of events to debug
-    """
     evpn: Annotated[
         Optional[EvpnContainer], Field(alias='srl_nokia-interfaces-nbr-evpn:evpn')
     ] = None
@@ -14608,16 +14517,10 @@ class DhcpRelayContainer(BaseModel):
         Optional[List[OptionLeafList]],
         Field(alias='srl_nokia-interfaces-ip-dhcp-relay:option'),
     ] = []
-    """
-    List of option82 suboptions to insert into relayed packet towards DHCPv4 server
-    """
     server: Annotated[
         Optional[List[ServerLeafList]],
         Field(alias='srl_nokia-interfaces-ip-dhcp-relay:server'),
     ] = []
-    """
-    List of the DHCPv4 servers that the DHCPv4 relay function will relay DHCPv4 packets to/from
-    """
     gi_address: Annotated[
         Optional[GiAddressLeaf],
         Field(alias='srl_nokia-interfaces-ip-dhcp-relay:gi-address'),
@@ -14672,16 +14575,10 @@ class DhcpRelayContainer2(BaseModel):
         Optional[List[OptionLeafList2]],
         Field(alias='srl_nokia-interfaces-ip-dhcp-relay:option'),
     ] = []
-    """
-    List of options to insert into relayed packet towards DHCPv6 server
-    """
     server: Annotated[
         Optional[List[ServerLeafList2]],
         Field(alias='srl_nokia-interfaces-ip-dhcp-relay:server'),
     ] = []
-    """
-    List of the DHCPv6 servers that the DHCPv6 relay function will relay DHCPv6 packets to/from
-    """
     source_address: Annotated[
         Optional[SourceAddressLeaf],
         Field(alias='srl_nokia-interfaces-ip-dhcp-relay:source-address'),
@@ -14919,9 +14816,6 @@ class NeighborDiscoveryContainer(BaseModel):
     debug: Annotated[
         Optional[List[DebugLeafList2]], Field(alias='srl_nokia-interfaces-nbr:debug')
     ] = []
-    """
-    List of events to debug
-    """
     evpn: Annotated[
         Optional[EvpnContainer2], Field(alias='srl_nokia-interfaces-nbr-evpn:evpn')
     ] = None
@@ -15146,18 +15040,10 @@ class InterfaceListEntry(BaseModel):
         Optional[List[PhyGroupMembersLeafList]],
         Field(alias='srl_nokia-interfaces:phy-group-members'),
     ] = []
-    """
-    The group of interfaces sharing a phy with this interface
-
-    On the 7220 IXR-D2 and 7220 IXR-D2L platforms this group of interfaces must be set to the same speed, either 1/10G or 25G.
-    """
     physical_channel: Annotated[
         Optional[List[PhysicalChannelLeafList]],
         Field(alias='srl_nokia-interfaces:physical-channel'),
     ] = []
-    """
-    The list of transceiver channels associated with this port
-    """
     forwarding_mode: Annotated[
         Optional[ForwardingModeLeaf],
         Field(alias='srl_nokia-interfaces:forwarding-mode'),
