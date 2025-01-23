@@ -10,6 +10,7 @@ from typing_extensions import Annotated
 class AgingLeaf1(RootModel[int]):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     root: Annotated[int, Field(ge=0, le=18446744073709551615, title='AgingLeaf')]
     """
@@ -69,6 +70,7 @@ class DomainNameType(RootModel[str]):
 class HoldDownTimeRemainingLeaf1(RootModel[int]):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     root: Annotated[
         int, Field(ge=0, le=18446744073709551615, title='Hold-down-time-remainingLeaf')
@@ -81,6 +83,7 @@ class HoldDownTimeRemainingLeaf1(RootModel[int]):
 class LastReportedDynamicDelayLeaf1(RootModel[int]):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     root: Annotated[
         int, Field(ge=0, le=2147483647, title='Last-reported-dynamic-delayLeaf')
@@ -97,6 +100,7 @@ class LinuxContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     device_name: Annotated[
         Optional[str],
@@ -123,6 +127,7 @@ class OpticalSignalToNoiseRatioContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     current: Annotated[
         Optional[float],
@@ -181,6 +186,7 @@ class PolarizationDependentLossContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     current: Annotated[
         Optional[float],
@@ -239,6 +245,7 @@ class PowerContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     current: Annotated[
         Optional[float],
@@ -297,6 +304,7 @@ class PowerContainer2(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     current: Annotated[
         Optional[float],
@@ -351,6 +359,7 @@ class PowerContainer2(BaseModel):
 class PreferredLifetimeLeaf1(RootModel[int]):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     root: Annotated[int, Field(ge=0, le=4294967295, title='Preferred-lifetimeLeaf')]
     """
@@ -367,6 +376,7 @@ class PrimaryLeaf(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
 
 
@@ -379,12 +389,14 @@ class PrimaryLeaf2(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
 
 
 class PtpTimestampingContainer(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     disable_ip_timestamping: Annotated[
         Optional[bool],
@@ -407,6 +419,7 @@ class QualityContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     current: Annotated[
         Optional[float],
@@ -465,6 +478,7 @@ class SignalDegradeContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     exponent: Annotated[
         Optional[int],
@@ -491,6 +505,7 @@ class SignalDegradeContainer2(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     exponent: Annotated[
         Optional[int],
@@ -517,6 +532,7 @@ class SignalFailureContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     exponent: Annotated[
         Optional[int],
@@ -543,6 +559,7 @@ class SignalFailureContainer2(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     exponent: Annotated[
         Optional[int],
@@ -569,6 +586,7 @@ class StateOfPolarizationRateOfChangeContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     current: Annotated[
         Optional[float],
@@ -623,6 +641,7 @@ class StateOfPolarizationRateOfChangeContainer(BaseModel):
 class StaticDelayLeaf1(RootModel[int]):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     root: Annotated[int, Field(ge=1, le=16777215, title='Static-delayLeaf')]
     """
@@ -637,6 +656,7 @@ class SweepContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     start: Annotated[
         Optional[int],
@@ -668,6 +688,7 @@ class TotalPowerContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     current: Annotated[
         Optional[float],
@@ -726,6 +747,7 @@ class TrafficRateContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     in_bps: Annotated[
         Optional[int],
@@ -760,6 +782,7 @@ class TransmitPowerContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     minimum: Annotated[
         Optional[float],
@@ -794,6 +817,7 @@ class TransmittedContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     power: Annotated[
         Optional[PowerContainer2], Field(alias='srl_nokia-interfaces-dco:power')
@@ -807,12 +831,14 @@ class UntaggedContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
 
 
 class ValidLifetimeLeaf1(RootModel[int]):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     root: Annotated[int, Field(ge=0, le=4294967295, title='Valid-lifetimeLeaf')]
     """
@@ -823,6 +849,7 @@ class ValidLifetimeLeaf1(RootModel[int]):
 class VlanIdType(RootModel[int]):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     root: Annotated[int, Field(ge=1, le=4094)]
     """
@@ -837,6 +864,7 @@ class VlanListListEntry(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     vlan_id: Annotated[
         Optional[int],
@@ -847,6 +875,7 @@ class VlanListListEntry(BaseModel):
 class VoltageContainer(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     latest_value: Annotated[
         Optional[float],
@@ -1705,6 +1734,7 @@ class BitErrorRateContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     current: Annotated[
         Optional[float],
@@ -1763,6 +1793,7 @@ class ChannelListEntry(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     index: Annotated[
         Optional[int], Field(alias='srl_nokia-interfaces:index', ge=1, le=10)
@@ -1787,6 +1818,7 @@ class ChannelListEntry(BaseModel):
 class ChromaticDispersionRangeContainer(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     minimum: Annotated[
         Optional[int],
@@ -1825,6 +1857,7 @@ class ChromaticDispersionContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     current: Annotated[
         Optional[int],
@@ -1883,6 +1916,7 @@ class DifferentialGroupDelayContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     current: Annotated[
         Optional[float],
@@ -1941,6 +1975,7 @@ class ElectricalSignalToNoiseRatioContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     current: Annotated[
         Optional[float],
@@ -1999,6 +2034,7 @@ class FineTuningContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     range: Annotated[
         Optional[int],
@@ -2038,6 +2074,7 @@ class FirmwareVersionContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     major_revision: Annotated[
         Optional[int],
@@ -2068,6 +2105,7 @@ class FirmwareVersionContainer(BaseModel):
 class FlowControlContainer(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     receive: Annotated[
         Optional[bool], Field(alias='srl_nokia-interfaces:receive', title='ReceiveLeaf')
@@ -2095,6 +2133,7 @@ class FrequencyOffsetContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     current: Annotated[
         Optional[int],
@@ -2149,6 +2188,7 @@ class FrequencyOffsetContainer(BaseModel):
 class Ipv4AddressType(RootModel[str]):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     root: Annotated[
         str,
@@ -2164,6 +2204,7 @@ class Ipv4AddressType(RootModel[str]):
 class Ipv6AddressType(RootModel[str]):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     root: Annotated[
         str,
@@ -2184,6 +2225,7 @@ class LimitContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     max_entries: Annotated[
         Optional[int],
@@ -2233,6 +2275,7 @@ class MacAddressListEntry(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     mac: Annotated[
         Optional[str],
@@ -2254,6 +2297,7 @@ class MacLimitContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     maximum_entries: Annotated[
         Optional[int],
@@ -2290,6 +2334,7 @@ class MacListEntry(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     address: Annotated[
         Optional[str],
@@ -2336,6 +2381,7 @@ class MacListEntry2(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     address: Annotated[
         Optional[str],
@@ -2382,6 +2428,7 @@ class MediaFrameErrorCountContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     current: Annotated[
         Optional[int],
@@ -2445,6 +2492,7 @@ class MultiDomainAllowedSourceMacsContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     mac_address: Annotated[
         Optional[List[MacAddressListEntry]], Field(alias='srl_nokia-dot1x:mac-address')
@@ -2458,6 +2506,7 @@ class P4rtContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     id: Annotated[
         Optional[int],
@@ -2508,6 +2557,7 @@ class PtpContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     tunnel: Annotated[
         Optional[bool],
@@ -2530,6 +2580,7 @@ class PtpContainer(BaseModel):
 class RaGuardContainer(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     policy: Annotated[
         Optional[str],
@@ -2554,6 +2605,7 @@ class ReceivedContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     bit_error_rate: Annotated[
         Optional[BitErrorRateContainer],
@@ -2606,6 +2658,7 @@ class ReceivedContainer(BaseModel):
 class StatisticsContainer(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     in_packets: Annotated[
         Optional[int],
@@ -2845,6 +2898,7 @@ class StatisticsContainer(BaseModel):
 class StatisticsContainer10(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     advertisements_sent: Annotated[
         Optional[int],
@@ -3011,6 +3065,7 @@ class StatisticsContainer11(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     in_packets: Annotated[
         Optional[int],
@@ -3284,6 +3339,7 @@ class StatisticsContainer12(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     out_probe_packets: Annotated[
         Optional[int],
@@ -3306,6 +3362,7 @@ class StatisticsContainer13(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     out_total_probe_packets: Annotated[
         Optional[int],
@@ -3324,6 +3381,7 @@ class StatisticsContainer13(BaseModel):
 class StatisticsContainer14(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     client_packets_received: Annotated[
         Optional[int],
@@ -3406,6 +3464,7 @@ class StatisticsContainer15(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     in_packets: Annotated[
         Optional[int],
@@ -3675,6 +3734,7 @@ class StatisticsContainer15(BaseModel):
 class StatisticsContainer17(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     discarded_packets: Annotated[
         Optional[int],
@@ -3697,6 +3757,7 @@ class StatisticsContainer18(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     in_packets: Annotated[
         Optional[int],
@@ -3970,6 +4031,7 @@ class StatisticsContainer19(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     lacp_in_pkts: Annotated[
         Optional[int],
@@ -4054,6 +4116,7 @@ class StatisticsContainer2(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     received: Annotated[
         Optional[ReceivedContainer], Field(alias='srl_nokia-interfaces-dco:received')
@@ -4067,6 +4130,7 @@ class StatisticsContainer2(BaseModel):
 class StatisticsContainer3(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     in_mac_pause_frames: Annotated[
         Optional[int],
@@ -4324,6 +4388,7 @@ class StatisticsContainer3(BaseModel):
 class StatisticsContainer5(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     advertisements_sent: Annotated[
         Optional[int],
@@ -4490,6 +4555,7 @@ class StatisticsContainer6(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     in_packets: Annotated[
         Optional[int],
@@ -4763,6 +4829,7 @@ class StatisticsContainer7(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     out_probe_packets: Annotated[
         Optional[int],
@@ -4785,6 +4852,7 @@ class StatisticsContainer8(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     out_total_probe_packets: Annotated[
         Optional[int],
@@ -4803,6 +4871,7 @@ class StatisticsContainer8(BaseModel):
 class StatisticsContainer9(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     client_packets_received: Annotated[
         Optional[int],
@@ -4885,6 +4954,7 @@ class SubsystemContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     vendor_name: Annotated[
         Optional[str],
@@ -4923,6 +4993,7 @@ class SubsystemContainer(BaseModel):
 class TemperatureContainer(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     latest_value: Annotated[
         Optional[int],
@@ -5072,6 +5143,7 @@ class UnidirectionalLinkDelayContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     static_delay: Annotated[
         Optional[Union[StaticDelayLeaf1, EnumerationEnum36]],
@@ -5099,6 +5171,7 @@ class VhostContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     vhost_socket_path: Annotated[
         str,
@@ -5166,6 +5239,7 @@ class XstpContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     tunnel: Annotated[
         Optional[bool],
@@ -5192,6 +5266,7 @@ class AdapterContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     model_number: Annotated[
         Optional[str],
@@ -5259,6 +5334,7 @@ class AdapterContainer(BaseModel):
 class AgingContainer(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     admin_state: Annotated[
         Optional[EnumerationEnum],
@@ -5274,6 +5350,7 @@ class AgingContainer(BaseModel):
 class AnycastGwContainer(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     virtual_router_id: Annotated[
         Optional[int],
@@ -5362,6 +5439,7 @@ class BreakoutModeContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     num_breakout_ports: Annotated[
         EnumerationEnum2,
@@ -5392,6 +5470,7 @@ class DatapathProgrammingContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     status: Annotated[
         Optional[EnumerationEnum46],
@@ -5416,6 +5495,7 @@ class DatapathProgrammingContainer2(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     status: Annotated[
         Optional[EnumerationEnum58],
@@ -5440,6 +5520,7 @@ class Dot1xContainer2(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     tunnel: Annotated[
         Optional[bool],
@@ -5468,6 +5549,7 @@ class DoubleTaggedContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     inner_vlan_id: Annotated[
         Union[VlanIdType, EnumerationEnum81],
@@ -5492,6 +5574,7 @@ class DoubleTaggedContainer(BaseModel):
 class DuplicateEntriesContainer(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     mac: Annotated[
         Optional[List[MacListEntry2]],
@@ -5506,6 +5589,7 @@ class EfmOamContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     tunnel: Annotated[
         Optional[bool],
@@ -5532,6 +5616,7 @@ class ElmiContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     tunnel: Annotated[
         Optional[bool],
@@ -5558,6 +5643,7 @@ class EsmcContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     tunnel: Annotated[
         Optional[bool],
@@ -5584,6 +5670,7 @@ class EthernetSegmentAssociationContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     ethernet_segment: Annotated[
         Optional[str],
@@ -5628,6 +5715,7 @@ class ExponentialPortDampeningContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     admin_state: Annotated[
         Optional[EnumerationEnum],
@@ -5737,6 +5825,7 @@ class HealthzContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     status: Annotated[
         Optional[EnumerationEnum13],
@@ -5786,6 +5875,7 @@ class HoldTimeContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     up: Annotated[
         Optional[int],
@@ -5846,6 +5936,7 @@ class HostsContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     mac: Annotated[
         Optional[str],
@@ -5873,6 +5964,7 @@ class IngressSquelchingContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     squelch_levels: Annotated[
         Optional[str],
@@ -5904,6 +5996,7 @@ class InternalTagsContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     set_tag_set: Annotated[
         Optional[List[str]],
@@ -5921,6 +6014,7 @@ class InternalTagsContainer2(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     set_tag_set: Annotated[
         Optional[List[str]],
@@ -5938,6 +6032,7 @@ class InternalTagsContainer3(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     set_tag_set: Annotated[
         Optional[List[str]],
@@ -5955,6 +6050,7 @@ class InternalTagsContainer4(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     set_tag_set: Annotated[
         Optional[List[str]],
@@ -5972,6 +6068,7 @@ class LacpContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     tunnel: Annotated[
         Optional[bool],
@@ -5999,6 +6096,7 @@ class LacpContainer2(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     activity: Annotated[
         Optional[EnumerationEnum90],
@@ -6133,6 +6231,7 @@ class LacpContainer3(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     interval: Annotated[
         Optional[EnumerationEnum93],
@@ -6194,6 +6293,7 @@ class LacpContainer3(BaseModel):
 class LearntEntriesContainer(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     mac: Annotated[
         Optional[List[MacListEntry]],
@@ -6208,6 +6308,7 @@ class LldpContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     tunnel: Annotated[
         Optional[bool],
@@ -6230,6 +6331,7 @@ class LldpContainer(BaseModel):
 class LowVlanIdListEntry(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     range_low_vlan_id: Annotated[
         Optional[int],
@@ -6262,6 +6364,7 @@ class LowVlanIdListEntry(BaseModel):
 class MacDuplicationContainer(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     action: Annotated[
         Optional[EnumerationEnum71],
@@ -6297,6 +6400,7 @@ class MacDuplicationContainer(BaseModel):
 class MacLearningContainer(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     admin_state: Annotated[
         Optional[EnumerationEnum],
@@ -6327,6 +6431,7 @@ class MacTypeListEntry(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     type: Annotated[
         Optional[EnumerationEnum77],
@@ -6382,6 +6487,7 @@ class MacListEntry3(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     address: Annotated[
         Optional[str],
@@ -6445,6 +6551,7 @@ class MplsContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     statistics: Annotated[
         Optional[StatisticsContainer18], Field(alias='srl_nokia-if-mpls:statistics')
@@ -6458,6 +6565,7 @@ class MstInstanceListEntry(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     mst_instance: Annotated[
         Optional[int],
@@ -6515,6 +6623,7 @@ class NeighborListEntry(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     ipv4_address: Annotated[
         Optional[str],
@@ -6573,6 +6682,7 @@ class NeighborListEntry2(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     ipv6_address: Annotated[
         Optional[str],
@@ -6647,6 +6757,7 @@ class OpticalChannelListEntry(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     index: Annotated[
         Optional[int],
@@ -6923,6 +7034,7 @@ class PciContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     address: Annotated[
         Optional[str],
@@ -6995,6 +7107,7 @@ class PciContainer(BaseModel):
 class PopulateListEntry(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     route_type: Annotated[
         Optional[EnumerationEnum47],
@@ -7022,6 +7135,7 @@ class PopulateListEntry(BaseModel):
 class PopulateListEntry2(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     route_type: Annotated[
         Optional[EnumerationEnum59],
@@ -7053,6 +7167,7 @@ class PrefixListEntry(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     ipv6_prefix: Annotated[
         Optional[str],
@@ -7110,6 +7225,7 @@ class PrefixListEntry(BaseModel):
 class ResultListEntry(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     id: Annotated[
         Optional[str],
@@ -7261,6 +7377,7 @@ class RouterRoleContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     admin_state: Annotated[
         Optional[EnumerationEnum],
@@ -7395,6 +7512,7 @@ class ServerListEntry(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     domain: Annotated[
         Optional[str],
@@ -7439,6 +7557,7 @@ class ServerListEntry2(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     domain: Annotated[
         Optional[str],
@@ -7483,6 +7602,7 @@ class SflowContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     admin_state: Annotated[
         Optional[EnumerationEnum],
@@ -7528,6 +7648,7 @@ class SingleTaggedRangeContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     low_vlan_id: Annotated[
         Optional[List[LowVlanIdListEntry]],
@@ -7544,6 +7665,7 @@ class SingleTaggedContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     vlan_id: Annotated[
         Optional[Union[VlanIdType, EnumerationEnum80]],
@@ -7561,6 +7683,7 @@ class SsmContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     admin_state: Annotated[
         Optional[EnumerationEnum],
@@ -7577,6 +7700,7 @@ class SsmContainer(BaseModel):
 class StatisticsContainer16(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     active_entries: Annotated[
         Optional[int],
@@ -7623,6 +7747,7 @@ class StatisticsContainer16(BaseModel):
 class StatisticsContainer4(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     total_in_packets: Annotated[
         Optional[int],
@@ -7698,6 +7823,7 @@ class StatisticsContainer4(BaseModel):
 class StormControlContainer(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     units: Annotated[
         Optional[EnumerationEnum30],
@@ -7823,6 +7949,7 @@ class StormControlContainer(BaseModel):
 class StpContainer(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     admin_state: Annotated[
         Optional[EnumerationEnum],
@@ -7960,6 +8087,7 @@ class SymbolMonitorContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     admin_state: Annotated[
         Optional[EnumerationEnum],
@@ -8001,6 +8129,7 @@ class SynceContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     ssm: Annotated[Optional[SsmContainer], Field(alias='srl_nokia-interfaces:ssm')] = (
         None
@@ -8014,6 +8143,7 @@ class TraceOptionsContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     trace: Annotated[
         Optional[List[EnumerationEnum52]],
@@ -8028,6 +8158,7 @@ class TraceOptionsContainer2(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     trace: Annotated[
         Optional[List[EnumerationEnum53]],
@@ -8042,6 +8173,7 @@ class TraceOptionsContainer3(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     trace: Annotated[
         Optional[List[EnumerationEnum64]],
@@ -8056,6 +8188,7 @@ class TraceOptionsContainer4(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     trace: Annotated[
         Optional[List[EnumerationEnum68]],
@@ -8071,6 +8204,7 @@ class TrackInterfaceListEntry(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     interface: Annotated[
         Optional[str],
@@ -8102,6 +8236,7 @@ class TrackInterfaceListEntry2(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     interface: Annotated[
         Optional[str],
@@ -8128,6 +8263,7 @@ class TrackInterfaceListEntry2(BaseModel):
 class TransceiverContainer(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     functional_type: Annotated[
         Optional[Any],
@@ -8316,6 +8452,7 @@ class TransceiverContainer(BaseModel):
 class TunnelContainer(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     tunnel_all: Annotated[
         Optional[bool],
@@ -8358,6 +8495,7 @@ class UnnumberedContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     admin_state: Annotated[
         Optional[EnumerationEnum],
@@ -8403,6 +8541,7 @@ class VlanDiscoveryContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     type: Annotated[
         Optional[EnumerationEnum79],
@@ -8420,6 +8559,7 @@ class AddressListEntry2(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     ipv4_address: Annotated[
         Optional[str],
@@ -8478,6 +8618,7 @@ class AddressListEntry4(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     ipv6_address: Annotated[
         Optional[str],
@@ -8532,6 +8673,7 @@ class AddressListEntry4(BaseModel):
 class AdvertiseListEntry(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     route_type: Annotated[
         Optional[EnumerationEnum49],
@@ -8551,6 +8693,7 @@ class AdvertiseListEntry(BaseModel):
 class AdvertiseListEntry2(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     route_type: Annotated[
         Optional[EnumerationEnum61],
@@ -8574,6 +8717,7 @@ class AuthenticatedSessionListEntry(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     mac: Annotated[
         Optional[str],
@@ -8598,6 +8742,7 @@ class AuthenticatedSessionsContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     authenticated_session: Annotated[
         Optional[List[AuthenticatedSessionListEntry]],
@@ -8612,6 +8757,7 @@ class AuthenticationContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     keychain: Annotated[
         Optional[str],
@@ -8633,6 +8779,7 @@ class AuthenticationContainer2(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     keychain: Annotated[
         Optional[str],
@@ -8654,6 +8801,7 @@ class AuthenticatorContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     authenticate_port: Annotated[
         Optional[bool],
@@ -8794,6 +8942,7 @@ class CrcMonitorContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     admin_state: Annotated[
         Optional[EnumerationEnum],
@@ -8835,6 +8984,7 @@ class DhcpClientContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     trace_options: Annotated[
         Optional[TraceOptionsContainer2],
@@ -8849,6 +8999,7 @@ class DhcpClientContainer2(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     trace_options: Annotated[
         Optional[TraceOptionsContainer4],
@@ -8859,6 +9010,7 @@ class DhcpClientContainer2(BaseModel):
 class DhcpServerContainer(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     admin_state: Annotated[
         Optional[EnumerationEnum],
@@ -8885,6 +9037,7 @@ class DhcpServerContainer(BaseModel):
 class Dhcpv6ServerContainer(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     admin_state: Annotated[
         Optional[EnumerationEnum],
@@ -8911,6 +9064,7 @@ class Dhcpv6ServerContainer(BaseModel):
 class DnsResolutionContainer(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     server: Annotated[
         Optional[List[ServerListEntry]],
@@ -8921,6 +9075,7 @@ class DnsResolutionContainer(BaseModel):
 class DnsResolutionContainer2(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     server: Annotated[
         Optional[List[ServerListEntry2]],
@@ -8935,6 +9090,7 @@ class Dot1xContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     tunnel: Annotated[
         Optional[TunnelContainer], Field(alias='srl_nokia-dot1x:tunnel')
@@ -8947,6 +9103,7 @@ class Dot1xContainer(BaseModel):
 class EgressMappingContainer(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     vlan_stack_action: Annotated[
         Optional[EnumerationEnum83],
@@ -9024,6 +9181,7 @@ class EncapContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     single_tagged: Annotated[
         Optional[SingleTaggedContainer],
@@ -9051,6 +9209,7 @@ class EthCfmContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     ingress_squelching: Annotated[
         Optional[IngressSquelchingContainer],
@@ -9065,6 +9224,7 @@ class EvpnContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     advertise: Annotated[
         Optional[List[AdvertiseListEntry]],
@@ -9079,6 +9239,7 @@ class EvpnContainer2(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     advertise: Annotated[
         Optional[List[AdvertiseListEntry2]],
@@ -9093,6 +9254,7 @@ class HostRouteContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     populate: Annotated[
         Optional[List[PopulateListEntry]],
@@ -9107,6 +9269,7 @@ class HostRouteContainer2(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     populate: Annotated[
         Optional[List[PopulateListEntry2]],
@@ -9117,6 +9280,7 @@ class HostRouteContainer2(BaseModel):
 class IngressMappingContainer(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     vlan_stack_action: Annotated[
         Optional[EnumerationEnum83],
@@ -9194,6 +9358,7 @@ class InterfaceTrackingContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     track_interface: Annotated[
         Optional[List[TrackInterfaceListEntry]],
@@ -9208,6 +9373,7 @@ class InterfaceTrackingContainer2(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     track_interface: Annotated[
         Optional[List[TrackInterfaceListEntry2]],
@@ -9222,6 +9388,7 @@ class L2cpTransparencyContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     tunnel_all_l2cp: Annotated[
         Optional[bool],
@@ -9272,6 +9439,7 @@ class LocalMirrorDestinationContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     admin_state: Annotated[
         Optional[EnumerationEnum],
@@ -9298,6 +9466,7 @@ class LocalMirrorDestinationContainer(BaseModel):
 class MacTableContainer(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     mac: Annotated[
         Optional[List[MacListEntry3]],
@@ -9312,6 +9481,7 @@ class MemberListEntry(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     name: Annotated[
         Optional[str], Field(alias='srl_nokia-interfaces-lag:name', title='NameLeaf8')
@@ -9400,6 +9570,7 @@ class PacketLinkQualificationContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     result: Annotated[
         Optional[List[ResultListEntry]],
@@ -9414,6 +9585,7 @@ class RouterAdvertisementContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     router_role: Annotated[
         Optional[RouterRoleContainer],
@@ -9435,6 +9607,7 @@ class VirtualIpv4DiscoveryContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     address: Annotated[
         Optional[List[AddressListEntry2]],
@@ -9456,6 +9629,7 @@ class VirtualIpv6DiscoveryContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     address: Annotated[
         Optional[List[AddressListEntry4]],
@@ -9474,6 +9648,7 @@ class VlanContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     vlan_discovery: Annotated[
         Optional[VlanDiscoveryContainer],
@@ -9499,6 +9674,7 @@ class VrrpGroupListEntry(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     virtual_router_id: Annotated[
         Optional[int],
@@ -9727,6 +9903,7 @@ class VrrpGroupListEntry2(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     virtual_router_id: Annotated[
         Optional[int],
@@ -9970,6 +10147,7 @@ class VrrpContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     vrrp_group: Annotated[
         Optional[List[VrrpGroupListEntry]],
@@ -9985,6 +10163,7 @@ class VrrpContainer2(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     vrrp_group: Annotated[
         Optional[List[VrrpGroupListEntry2]],
@@ -9999,6 +10178,7 @@ class AddressListEntry(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     ip_prefix: Annotated[
         Optional[str],
@@ -10055,6 +10235,7 @@ class AddressListEntry3(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     ip_prefix: Annotated[
         Optional[str],
@@ -10120,6 +10301,7 @@ class ArpContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     duplicate_address_detection: Annotated[
         Optional[bool],
@@ -10190,6 +10372,7 @@ class BridgeTableContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     discard_unknown_src_mac: Annotated[
         Optional[bool],
@@ -10232,6 +10415,7 @@ class DhcpRelayContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     admin_state: Annotated[
         Optional[EnumerationEnum],
@@ -10325,6 +10509,7 @@ class DhcpRelayContainer2(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     admin_state: Annotated[
         Optional[EnumerationEnum],
@@ -10404,6 +10589,7 @@ class DhcpRelayContainer2(BaseModel):
 class EthernetContainer(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     aggregate_id: Annotated[
         Optional[str],
@@ -10755,6 +10941,7 @@ class Ipv4Container(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     admin_state: Annotated[
         Optional[EnumerationEnum],
@@ -10816,6 +11003,7 @@ class LagContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     lag_type: Annotated[
         Optional[EnumerationEnum86],
@@ -10893,6 +11081,7 @@ class NeighborDiscoveryContainer(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     duplicate_address_detection: Annotated[
         Optional[bool],
@@ -10985,6 +11174,7 @@ class Ipv6Container(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     admin_state: Annotated[
         Optional[EnumerationEnum],
@@ -11034,6 +11224,7 @@ class SubinterfaceListEntry(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     index: Annotated[
         Optional[int],
@@ -11268,6 +11459,7 @@ class InterfaceListEntry(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     name: Annotated[
         Optional[str],
@@ -11539,6 +11731,7 @@ class Model(BaseModel):
 
     model_config = ConfigDict(
         populate_by_name=True,
+        regex_engine="python-re",
     )
     interface: Annotated[
         Optional[List[InterfaceListEntry]],
