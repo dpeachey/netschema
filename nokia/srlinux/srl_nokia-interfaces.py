@@ -8013,8 +8013,8 @@ class MultiDomainAllowedSourceMacsContainer(BaseModel):
         populate_by_name=True,
     )
     mac_address: Annotated[
-        List[MacAddressListEntry], Field(alias='srl_nokia-dot1x:mac-address')
-    ]
+        Optional[List[MacAddressListEntry]], Field(alias='srl_nokia-dot1x:mac-address')
+    ] = None
 
 
 class NameLeaf(RootModel[InterfaceAllType]):
@@ -9359,8 +9359,8 @@ class RaGuardContainer(BaseModel):
         Optional[PolicyLeaf], Field(alias='srl_nokia-ra_guard:policy')
     ] = None
     vlan_list: Annotated[
-        List[VlanListListEntry], Field(alias='srl_nokia-ra_guard:vlan-list')
-    ]
+        Optional[List[VlanListListEntry]], Field(alias='srl_nokia-ra_guard:vlan-list')
+    ] = None
 
 
 class RangeLowVlanIdLeaf(RootModel[VlanIdType]):
@@ -11532,9 +11532,9 @@ class DuplicateEntriesContainer(BaseModel):
         populate_by_name=True,
     )
     mac: Annotated[
-        List[MacListEntry2],
+        Optional[List[MacListEntry2]],
         Field(alias='srl_nokia-interfaces-bridge-table-mac-duplication-entries:mac'),
-    ]
+    ] = None
 
 
 class EdgePortLeaf(RootModel[StpEdgePortTypeType]):
@@ -12108,9 +12108,9 @@ class LearntEntriesContainer(BaseModel):
         populate_by_name=True,
     )
     mac: Annotated[
-        List[MacListEntry],
+        Optional[List[MacListEntry]],
         Field(alias='srl_nokia-interfaces-bridge-table-mac-learning-entries:mac'),
-    ]
+    ] = None
 
 
 class LinkTypeLeaf(RootModel[StpLinkTypeType]):
@@ -12881,8 +12881,9 @@ class RouterRoleContainer(BaseModel):
         Field(alias='srl_nokia-interfaces-router-adv:router-lifetime'),
     ] = 1800
     prefix: Annotated[
-        List[PrefixListEntry], Field(alias='srl_nokia-interfaces-router-adv:prefix')
-    ]
+        Optional[List[PrefixListEntry]],
+        Field(alias='srl_nokia-interfaces-router-adv:prefix'),
+    ] = None
 
 
 class ServerLeafList(RootModel[Hostv4Type]):
@@ -12979,8 +12980,9 @@ class SingleTaggedRangeContainer(BaseModel):
         populate_by_name=True,
     )
     low_vlan_id: Annotated[
-        List[LowVlanIdListEntry], Field(alias='srl_nokia-interfaces-vlans:low-vlan-id')
-    ]
+        Optional[List[LowVlanIdListEntry]],
+        Field(alias='srl_nokia-interfaces-vlans:low-vlan-id'),
+    ] = None
 
 
 class SingleTaggedContainer(BaseModel):
@@ -13028,9 +13030,9 @@ class StatisticsContainer16(BaseModel):
         Field(alias='srl_nokia-interfaces-bridge-table-statistics:failed-entries'),
     ] = 0
     mac_type: Annotated[
-        List[MacTypeListEntry],
+        Optional[List[MacTypeListEntry]],
         Field(alias='srl_nokia-interfaces-bridge-table-statistics:mac-type'),
-    ]
+    ] = None
 
 
 class StatisticsContainer4(BaseModel):
@@ -13129,9 +13131,9 @@ class StpContainer(BaseModel):
         Field(alias='srl_nokia-interfaces-bridge-table-stp:root-guard'),
     ] = 'no'
     mst_instance: Annotated[
-        List[MstInstanceListEntry],
+        Optional[List[MstInstanceListEntry]],
         Field(alias='srl_nokia-interfaces-bridge-table-stp:mst-instance'),
-    ]
+    ] = None
 
 
 class SymbolMonitorContainer(BaseModel):
@@ -13356,15 +13358,15 @@ class TransceiverContainer(BaseModel):
         Optional[VoltageContainer], Field(alias='srl_nokia-interfaces:voltage')
     ] = None
     channel: Annotated[
-        List[ChannelListEntry], Field(alias='srl_nokia-interfaces:channel')
-    ]
+        Optional[List[ChannelListEntry]], Field(alias='srl_nokia-interfaces:channel')
+    ] = None
     healthz: Annotated[
         Optional[HealthzContainer], Field(alias='srl_nokia-platform-healthz:healthz')
     ] = None
     optical_channel: Annotated[
-        List[OpticalChannelListEntry],
+        Optional[List[OpticalChannelListEntry]],
         Field(alias='srl_nokia-interfaces-dco:optical-channel'),
-    ]
+    ] = None
     supported_operational_mode: Annotated[
         Optional[List[SupportedOperationalModeLeafList]],
         Field(alias='srl_nokia-interfaces-dco:supported-operational-mode'),
@@ -13608,9 +13610,9 @@ class AuthenticatedSessionsContainer(BaseModel):
         populate_by_name=True,
     )
     authenticated_session: Annotated[
-        List[AuthenticatedSessionListEntry],
+        Optional[List[AuthenticatedSessionListEntry]],
         Field(alias='srl_nokia-dot1x:authenticated-session'),
-    ]
+    ] = None
 
 
 class AuthenticationContainer(BaseModel):
@@ -13812,8 +13814,9 @@ class DnsResolutionContainer(BaseModel):
         populate_by_name=True,
     )
     server: Annotated[
-        List[ServerListEntry], Field(alias='srl_nokia-interfaces-ip-dhcp-relay:server')
-    ]
+        Optional[List[ServerListEntry]],
+        Field(alias='srl_nokia-interfaces-ip-dhcp-relay:server'),
+    ] = None
 
 
 class DnsResolutionContainer2(BaseModel):
@@ -13821,8 +13824,9 @@ class DnsResolutionContainer2(BaseModel):
         populate_by_name=True,
     )
     server: Annotated[
-        List[ServerListEntry2], Field(alias='srl_nokia-interfaces-ip-dhcp-relay:server')
-    ]
+        Optional[List[ServerListEntry2]],
+        Field(alias='srl_nokia-interfaces-ip-dhcp-relay:server'),
+    ] = None
 
 
 class Dot1xContainer(BaseModel):
@@ -13915,8 +13919,9 @@ class EvpnContainer(BaseModel):
         populate_by_name=True,
     )
     advertise: Annotated[
-        List[AdvertiseListEntry], Field(alias='srl_nokia-interfaces-nbr-evpn:advertise')
-    ]
+        Optional[List[AdvertiseListEntry]],
+        Field(alias='srl_nokia-interfaces-nbr-evpn:advertise'),
+    ] = None
 
 
 class EvpnContainer2(BaseModel):
@@ -13928,9 +13933,9 @@ class EvpnContainer2(BaseModel):
         populate_by_name=True,
     )
     advertise: Annotated[
-        List[AdvertiseListEntry2],
+        Optional[List[AdvertiseListEntry2]],
         Field(alias='srl_nokia-interfaces-nbr-evpn:advertise'),
-    ]
+    ] = None
 
 
 class HostRouteContainer(BaseModel):
@@ -13942,8 +13947,9 @@ class HostRouteContainer(BaseModel):
         populate_by_name=True,
     )
     populate: Annotated[
-        List[PopulateListEntry], Field(alias='srl_nokia-interfaces-nbr:populate')
-    ]
+        Optional[List[PopulateListEntry]],
+        Field(alias='srl_nokia-interfaces-nbr:populate'),
+    ] = None
 
 
 class HostRouteContainer2(BaseModel):
@@ -13955,8 +13961,9 @@ class HostRouteContainer2(BaseModel):
         populate_by_name=True,
     )
     populate: Annotated[
-        List[PopulateListEntry2], Field(alias='srl_nokia-interfaces-nbr:populate')
-    ]
+        Optional[List[PopulateListEntry2]],
+        Field(alias='srl_nokia-interfaces-nbr:populate'),
+    ] = None
 
 
 class IngressMappingContainer(BaseModel):
@@ -13992,9 +13999,9 @@ class InterfaceTrackingContainer(BaseModel):
         populate_by_name=True,
     )
     track_interface: Annotated[
-        List[TrackInterfaceListEntry],
+        Optional[List[TrackInterfaceListEntry]],
         Field(alias='srl_nokia-interfaces-ip-vrrp:track-interface'),
-    ]
+    ] = None
 
 
 class InterfaceTrackingContainer2(BaseModel):
@@ -14006,9 +14013,9 @@ class InterfaceTrackingContainer2(BaseModel):
         populate_by_name=True,
     )
     track_interface: Annotated[
-        List[TrackInterfaceListEntry2],
+        Optional[List[TrackInterfaceListEntry2]],
         Field(alias='srl_nokia-interfaces-ip-vrrp:track-interface'),
-    ]
+    ] = None
 
 
 class L2cpTransparencyContainer(BaseModel):
@@ -14072,9 +14079,9 @@ class MacTableContainer(BaseModel):
         populate_by_name=True,
     )
     mac: Annotated[
-        List[MacListEntry3],
+        Optional[List[MacListEntry3]],
         Field(alias='srl_nokia-interfaces-bridge-table-mac-table:mac'),
-    ]
+    ] = None
 
 
 class MemberListEntry(BaseModel):
@@ -14114,8 +14121,9 @@ class PacketLinkQualificationContainer(BaseModel):
         populate_by_name=True,
     )
     result: Annotated[
-        List[ResultListEntry], Field(alias='srl_nokia-packet-link-qual:result')
-    ]
+        Optional[List[ResultListEntry]],
+        Field(alias='srl_nokia-packet-link-qual:result'),
+    ] = None
 
 
 class RouterAdvertisementContainer(BaseModel):
@@ -14151,9 +14159,9 @@ class VirtualIpv4DiscoveryContainer(BaseModel):
         populate_by_name=True,
     )
     address: Annotated[
-        List[AddressListEntry2],
+        Optional[List[AddressListEntry2]],
         Field(alias='srl_nokia-interfaces-nbr-virtual-ip-discovery:address'),
-    ]
+    ] = None
     statistics: Annotated[
         Optional[StatisticsContainer8],
         Field(alias='srl_nokia-interfaces-nbr-virtual-ip-discovery:statistics'),
@@ -14172,9 +14180,9 @@ class VirtualIpv6DiscoveryContainer(BaseModel):
         populate_by_name=True,
     )
     address: Annotated[
-        List[AddressListEntry4],
+        Optional[List[AddressListEntry4]],
         Field(alias='srl_nokia-interfaces-nbr-virtual-ip-discovery:address'),
-    ]
+    ] = None
     statistics: Annotated[
         Optional[StatisticsContainer13],
         Field(alias='srl_nokia-interfaces-nbr-virtual-ip-discovery:statistics'),
@@ -14416,8 +14424,9 @@ class VrrpContainer(BaseModel):
         populate_by_name=True,
     )
     vrrp_group: Annotated[
-        List[VrrpGroupListEntry], Field(alias='srl_nokia-interfaces-ip-vrrp:vrrp-group')
-    ]
+        Optional[List[VrrpGroupListEntry]],
+        Field(alias='srl_nokia-interfaces-ip-vrrp:vrrp-group'),
+    ] = None
 
 
 class VrrpContainer2(BaseModel):
@@ -14430,9 +14439,9 @@ class VrrpContainer2(BaseModel):
         populate_by_name=True,
     )
     vrrp_group: Annotated[
-        List[VrrpGroupListEntry2],
+        Optional[List[VrrpGroupListEntry2]],
         Field(alias='srl_nokia-interfaces-ip-vrrp:vrrp-group'),
-    ]
+    ] = None
 
 
 class AddressListEntry(BaseModel):
@@ -14514,8 +14523,9 @@ class ArpContainer(BaseModel):
         Field(alias='srl_nokia-interfaces-nbr:learn-unsolicited'),
     ] = False
     neighbor: Annotated[
-        List[NeighborListEntry], Field(alias='srl_nokia-interfaces-nbr:neighbor')
-    ]
+        Optional[List[NeighborListEntry]],
+        Field(alias='srl_nokia-interfaces-nbr:neighbor'),
+    ] = None
     host_route: Annotated[
         Optional[HostRouteContainer], Field(alias='srl_nokia-interfaces-nbr:host-route')
     ] = None
@@ -14806,8 +14816,8 @@ class Ipv4Container(BaseModel):
         Optional[AdminStateLeaf7], Field(alias='srl_nokia-interfaces:admin-state')
     ] = 'disable'
     address: Annotated[
-        List[AddressListEntry], Field(alias='srl_nokia-interfaces:address')
-    ]
+        Optional[List[AddressListEntry]], Field(alias='srl_nokia-interfaces:address')
+    ] = None
     allow_directed_broadcast: Annotated[
         Optional[AllowDirectedBroadcastLeaf],
         Field(alias='srl_nokia-interfaces:allow-directed-broadcast'),
@@ -14864,8 +14874,8 @@ class LagContainer(BaseModel):
         Optional[LagSpeedLeaf], Field(alias='srl_nokia-interfaces-lag:lag-speed')
     ] = None
     member: Annotated[
-        List[MemberListEntry], Field(alias='srl_nokia-interfaces-lag:member')
-    ]
+        Optional[List[MemberListEntry]], Field(alias='srl_nokia-interfaces-lag:member')
+    ] = None
     lacp: Annotated[Optional[LacpContainer3], Field(alias='srl_nokia-lacp:lacp')] = None
 
 
@@ -14893,8 +14903,9 @@ class NeighborDiscoveryContainer(BaseModel):
         Field(alias='srl_nokia-interfaces-nbr:learn-unsolicited'),
     ] = 'none'
     neighbor: Annotated[
-        List[NeighborListEntry2], Field(alias='srl_nokia-interfaces-nbr:neighbor')
-    ]
+        Optional[List[NeighborListEntry2]],
+        Field(alias='srl_nokia-interfaces-nbr:neighbor'),
+    ] = None
     host_route: Annotated[
         Optional[HostRouteContainer2],
         Field(alias='srl_nokia-interfaces-nbr:host-route'),
@@ -14943,8 +14954,8 @@ class Ipv6Container(BaseModel):
     -	ff02::2 (all IPv6 routers)
     """
     address: Annotated[
-        List[AddressListEntry3], Field(alias='srl_nokia-interfaces:address')
-    ]
+        Optional[List[AddressListEntry3]], Field(alias='srl_nokia-interfaces:address')
+    ] = None
     statistics: Annotated[
         Optional[StatisticsContainer11], Field(alias='srl_nokia-interfaces:statistics')
     ] = None
@@ -15167,8 +15178,9 @@ class InterfaceListEntry(BaseModel):
         Optional[EthernetContainer], Field(alias='srl_nokia-interfaces:ethernet')
     ] = None
     subinterface: Annotated[
-        List[SubinterfaceListEntry], Field(alias='srl_nokia-interfaces:subinterface')
-    ]
+        Optional[List[SubinterfaceListEntry]],
+        Field(alias='srl_nokia-interfaces:subinterface'),
+    ] = None
     sflow: Annotated[
         Optional[SflowContainer], Field(alias='srl_nokia-interfaces:sflow')
     ] = None
@@ -15223,8 +15235,9 @@ class Model(BaseModel):
         populate_by_name=True,
     )
     interface: Annotated[
-        List[InterfaceListEntry], Field(alias='srl_nokia-interfaces:interface')
-    ]
+        Optional[List[InterfaceListEntry]],
+        Field(alias='srl_nokia-interfaces:interface'),
+    ] = None
 
 
 if __name__ == "__main__":
